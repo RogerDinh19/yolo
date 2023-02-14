@@ -27,3 +27,4 @@ const heroSliderData = [
 ]
 
 export default heroSliderData
+

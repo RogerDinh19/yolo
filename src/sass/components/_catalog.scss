@@ -1,0 +1,94 @@
+.catalog{
+    @include flex(flex-start, flex-start);
+
+    @include tablet{
+        flex-direction: column;
+    }
+
+    .catalog__filter{
+        width: 20%;
+
+        @include tablet {
+            width: max-content;
+            height: 100vh;
+            background-color: $main-bg;
+            padding: 1rem;
+            position: fixed;
+            left: 0;
+            top: $header-tablet-height;
+            z-index: 1000;
+            box-shadow: $box-shadow;
+            transform: translateX(-100%);
+            transition:  transform 0.5s ease;
+        }
+
+        @include mobile {
+            top: $header-mobile-height;
+        }
+
+        .catalog__filter__close{
+            display: none;
+
+            @include tablet {
+                display: block;
+                font-size: 2rem;
+                margin-bottom: 1rem;
+                
+            }
+
+            i{
+                cursor: pointer;
+            }
+        }
+
+        .catalog__filter__widget{
+            margin-bottom: 2rem;
+           
+            .catalog__filter__widget__title{
+                font-size: 1.25rem;
+                font-weight: 600;
+                text-transform: capitalize;
+                margin-bottom: 16px;
+
+            }
+
+            .catalog__filter__widget__content{
+                color: $txt-second-color;
+
+                .catalog__filter__widget__content__item{
+                    margin-bottom: 13px;
+                }
+            }
+        }
+    }
+
+    .catalog__filter.active{
+        transform: translateX(0);
+    }
+
+    .catalog__content{
+        flex-grow: 1;
+
+        @include tablet {
+            width: 100%;
+        }
+    }
+
+    .catalog__filter__toggle{
+        display: none;
+
+        @include tablet {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            font-size: 1.25rem;
+            cursor: pointer;
+           
+        }
+
+        i{
+            
+            font-size: 1.5rem;
+        }
+    }
+}

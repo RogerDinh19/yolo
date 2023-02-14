@@ -1,6 +1,6 @@
 import React from "react";
 
-const Section = props => {
+function Section(props) {
     return (  
         <div className="section">
             {props.children}

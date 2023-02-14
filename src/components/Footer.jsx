@@ -43,7 +43,11 @@ const footerCustomerLinks = [
     }
 ]
 
-const Footer = () => {
+function Footer(){
+
+    const clickToTop = () => {
+        window.scrollTo(0, 0)
+      }
     return (
         <footer className="footer">
             <div className='container'>
@@ -106,7 +110,7 @@ const Footer = () => {
                     
                     <div className="footer__about">
                         <p>
-                            <Link to="/">
+                            <Link to="/" onClick={clickToTop}>
                                 <img src={logo} className="footer__logo" alt="" />
                             </Link>
                         </p>

@@ -13,6 +13,10 @@
 
 html{
     font-size: 13px;
+
+    @include tablet {
+        font-size: 12px;
+    }
 }
 
 body{

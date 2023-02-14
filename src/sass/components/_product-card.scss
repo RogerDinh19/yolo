@@ -14,6 +14,7 @@
             left: 50%;
             transform: translateX(-50%);
             height: 100%;
+            border-radius: 5px;
 
             &:nth-child(1) {
                 transform: translateX(-50%) scale(1);
@@ -43,13 +44,13 @@
 
     .product-card__name{
         margin-bottom: 10px;
-        color: $txt-second-color;
+        color: $txt-main-color;
         font-size: 1.25rem;
         font-weight: normal;
     }
 
     .product-card__price{
-        color: $txt-main-color;
+        color: $txt-price ;
         font-size: 1.5rem;
         font-weight: 600;
         margin-bottom: 10px;
@@ -58,6 +59,7 @@
             color: $txt-second-color;
             margin-left: 20px;
             font-weight: 300;
+            font-size: 1.25rem;
         }
     }
 

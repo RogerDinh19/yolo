@@ -25,10 +25,7 @@
             padding-top: $header-tablet-height;
         }
 
-        @include mobile {
-            padding-top: unset;
-            padding-bottom: 40px;
-        }
+        
 
         &.active {
             opacity: 1;

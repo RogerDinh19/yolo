@@ -14,7 +14,9 @@ import policy from "../assets/fake-data/policy"
 import productData from '../assets/fake-data/products';
 import banner from "../assets/images/banner.png";
 
-const Home = () => {
+function Home() {
+
+
   return (
     <Helmet title="Trang chu">
         {/* slider */}
@@ -55,13 +57,13 @@ const Home = () => {
           </SectionTitle>
           <SectionBody>
             <Grid
-              col={5}
+              col={4}
               mdCol={2}
               smCol={1}
               gap={20}
             >
               {
-                productData.getProducts(5).map((item,index) =>(
+                productData.getProducts(4).map((item,index) =>(
                   <ProductCart
                     key={index}
                     img01={item.image01}
@@ -92,13 +94,13 @@ const Home = () => {
           </SectionTitle>
           <SectionBody>
             <Grid
-              col={5}
+              col={4}
               mdCol={2}
               smCol={1}
               gap={20}
             >
               {
-                productData.getProducts(10).map((item,index) =>(
+                productData.getProducts(12).map((item,index) =>(
                   <ProductCart
                     key={index}
                     img01={item.image01}

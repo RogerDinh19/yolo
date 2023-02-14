@@ -1,11 +1,17 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from "react"
+import PropTypes from "prop-types"
 
-import Button from "./Button";
-import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux"
+import { set } from "../redux/redux-modal/productModalSlice"
+
+import Button from "./Button"
+import numberWithCommas from "../numberToString/numberWithCommas"
+import { Link } from "react-router-dom"
 
 
-const ProductCart = props => {
+function ProductCart(props) {
+
+    const dispatch = useDispatch()
     return ( 
         <div className="product-card">
             <Link to={`/catalog/${props.slug}`}>
@@ -15,9 +21,9 @@ const ProductCart = props => {
                 </div>
                 <h3 className="product-card__name">{props.name}</h3>
                 <div className="product-card__price">
-                    {props.price} đ
+                    {numberWithCommas(props.price)} đ
                     <span className="product-card__price__old">
-                        <del>399000 đ</del>
+                        <del>389.000 đ</del>
                     </span>
                 </div>
             </Link>
@@ -27,6 +33,7 @@ const ProductCart = props => {
                         size="sm"
                         icon="bx bxs-cart-add" 
                         animate={true}
+                        onclick = {() =>  dispatch(set(props.slug))}
                     >
                         Chọn mua
                     </Button>

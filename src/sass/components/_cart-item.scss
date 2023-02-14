@@ -1,0 +1,86 @@
+.cart__list{
+    width: 60%;
+    @include tablet {
+        width: max-content;
+    }
+
+    .cart__item {
+        @include flex(center, flex-start);
+        margin-bottom: 20px;
+    
+        .cart__item__image {
+            margin-right: 20px;
+    
+            img {
+                height: 150px;
+            }
+        }
+    
+        .cart__item__info {
+            @include flex(center, space-between);
+            flex-grow: 1;
+    
+            @include mobile {
+                @include flex(flex-start, center);
+                flex-direction: column;
+            }
+    
+            .cart__item__info__name {
+                width: 40%;
+    
+                @include mobile {
+                    width: 100%;
+                }
+            }
+    
+            .cart__item__info__name,
+            .cart__item__info__price {
+                font-size: 1.25rem;
+            }
+
+            .cart__item__info__price{
+                color: $txt-price;
+            }
+
+            .cart__item__info__quantity{
+                .product__info__item__quantity{
+                    @include flex(flex-start,flex-start);
+    
+                    .product__info__item__quantity__btn{
+                        @include flex( center, center);
+                        width: 30px;
+                        height: 30px;
+                        border: 2px solid $txt-second-color;
+                        cursor: pointer;
+                    }
+    
+                    .product__info__item__quantity__input{
+                        @include flex(center, center);
+                        height: 30px;
+                        width: 90px;
+                        font-size: 1.25rem;
+                        border-top: 2px solid $txt-second-color;
+                        border-bottom: 2px solid $txt-second-color;
+    
+                    }
+                }
+            }
+            
+            .cart__item__info__delete{
+                font-size: 1.5rem;
+    
+                i {
+                    cursor: pointer;
+    
+                    &:hover {
+                        color: $main-color;
+                    }
+                }
+            }
+        }
+    
+        .cart__item__info> * {
+            margin-bottom: 10px;
+        }
+    }
+}

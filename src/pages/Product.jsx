@@ -1,10 +1,61 @@
 import React from 'react'
 
-const Product = () => {
+import Helmet from '../components/Helmet'
+import Section, {SectionBody , SectionTitle} from '../components/Section'
+import Grid from '../components/Grid'
+import ProductCart from '../components/ProductCart'
+import ProductView from '../components/ProductView'
+
+import productData from '../assets/fake-data/products'
+
+function Product(props) {
+
+  const product = productData.getProductBySlug(props.match.params.slug)
+  
+  // click san pham scroll to top
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [product])
+
+
   return (
-    <div>
-      Product
-    </div>
+    <Helmet title={product.title}>
+      <Section>
+        <SectionBody>
+          <ProductView
+            product={product}
+          />
+        </SectionBody>
+      </Section>
+
+      <Section>
+        <SectionTitle>
+          Khám Phá Thêm
+        </SectionTitle>
+
+        <SectionBody>
+          <Grid
+            col={4}
+            mdCol={2}
+            smCol={1}
+            gap={20}
+          >
+            {
+              productData.getAllProducts(8).map((item, index) =>(
+                <ProductCart
+                    key={index}
+                    img01={item.image01}
+                    img02={item.image02}
+                    name={item.title}
+                    price={Number(item.price)}
+                    slug={item.slug}
+                  />
+              ))
+            }
+          </Grid>
+        </SectionBody>
+      </Section>
+    </Helmet>
   )
 }
 
