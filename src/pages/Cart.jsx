@@ -39,6 +39,7 @@ function Cart() {
                     <p>
                         Bạn đang có {totalProducts} sản phẩm
                     </p>
+                    
                     <div className="cart__info__text__price">
                         <span>Thành tiền</span>
                         <span>{numberWithCommas(totalPrice)}</span>
@@ -61,6 +62,16 @@ function Cart() {
                             <CartItem item={item} key={index}/>
                         ))
                     }
+
+                    <div className="cart__notify">
+                        {
+                            cartItems.length === 0 ? (
+                                <div className="cart__notify__text">
+                                Bạn chưa có sản phẩm nào trong giỏ hàng
+                                </div>
+                            ) : null
+                        }
+                    </div>
             </div>
         </div>
     </Helmet>

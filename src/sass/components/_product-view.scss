@@ -50,21 +50,21 @@
             padding-top: 2rem;
     
             .product__info__title{
-                font-size: 2.5rem;
+                font-size: 2rem;
                 font-weight: normal;
             }
     
             .product__info__item{
-                margin-top: 2rem;
+                margin-top: 1.5rem;
     
                 .product__info__item__price{
                     color: $txt-price;
-                    font-size: 2rem;
+                    font-size: 1.5rem;
                     font-weight: 600;
                 }
     
                 .product__info__item__title{
-                    font-size: 1.5rem;
+                    font-size: 1.25rem;
                     font-weight: 600;
                     margin-bottom: 1rem;
                 }
@@ -74,16 +74,16 @@
     
                     .product__info__item__list__item{
                         @include flex(center,center);
-                        width: 50px;
-                        height: 50px;
+                        width: 40px;
+                        height: 40px;
                         border-radius: 50%;
                         border: 2px solid $txt-second-color;
                         cursor: pointer;
                         margin-right: 1rem;
     
                         @include mobile {
-                            width: 40px;
-                            height: 40px;
+                            width: 30px;
+                            height: 30px;
                         }
     
                         &:hover{
@@ -91,18 +91,18 @@
                         }
     
                         .circle{
-                            width: 40px;
-                            height: 40px;
+                            width: 30px;
+                            height: 30px;
                             border-radius: 50%;
                             @include mobile {
-                                width: 30px;
-                                height: 30px;
+                                width: 20px;
+                                height: 20px;
                             }
     
                         }
     
                         .product__info__item__list__item__size{
-                            font-size: 1.5rem;
+                            font-size: 1.25rem;
                             text-transform: uppercase;
                         }
                     }

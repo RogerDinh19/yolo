@@ -186,12 +186,16 @@ function ProductView(props) {
                     <Button 
                         size='sm'
                         onclick={() => addToCart()}
+                        icon='bx bxs-cart-add'
+                        animate={true}
                     >
                             Thêm vào giỏ hàng
                     </Button>
                     <Button
                         size='sm'
                         onclick={() => goToCart()}
+                        icon='bx bxs-cart'
+                        animate={true}
                     >
                         Mua ngay
                     </Button>
