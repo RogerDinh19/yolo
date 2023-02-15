@@ -6,6 +6,7 @@ import { withRouter } from 'react-router-dom'
 
 import { useDispatch } from 'react-redux'
 import { addItem } from '../redux/shopping-cart/cartItemsSlide'
+import { remove } from '../redux/redux-modal/productModalSlice'
 
 function ProductView(props) {
 
@@ -71,8 +72,7 @@ function ProductView(props) {
                 quantity: quantity,
                 price:product.price
             }))
-
-            alert("Thêm thành công")
+            alert("Đã thêm sản phẩm vào giỏ hàng")
         }
     }
 
@@ -86,6 +86,7 @@ function ProductView(props) {
                 quantity: quantity,
                 price:product.price
             }))
+            dispatch(remove())
             return props.history.push('/cart')
         }
     }

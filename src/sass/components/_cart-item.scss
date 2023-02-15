@@ -1,8 +1,7 @@
 .cart__list{
     width: 60%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
     @include tablet {
         width: max-content;
     }
