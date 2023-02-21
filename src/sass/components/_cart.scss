@@ -22,9 +22,9 @@
         box-shadow: $box-shadow;
         position: sticky;
         top: calc(#{header-shirnk-height} + 20px);
-
         @include tablet {
             width: max-content;
+            margin-right: 0px;
         }
 
         .cart__info__text{
