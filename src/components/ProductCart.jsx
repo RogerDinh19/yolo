@@ -1,5 +1,6 @@
-import React from "react"
+import React , { useEffect } from "react"
 import PropTypes from "prop-types"
+import ScrollReveal from 'scrollreveal';
 
 import { useDispatch } from "react-redux"
 import { set } from "../redux/redux-modal/productModalSlice"
@@ -10,6 +11,10 @@ import { Link } from "react-router-dom"
 
 
 function ProductCart(props) {
+
+    useEffect(() => {
+        ScrollReveal().reveal('.product-card', { delay: 100, origin: 'top',duration: 1000,distance: '60px' });
+    }, []);
 
     const dispatch = useDispatch()
     return ( 

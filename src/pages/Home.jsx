@@ -1,5 +1,7 @@
-import React from 'react'
+import React , { useEffect}from 'react'
 import { Link } from 'react-router-dom';
+import ScrollReveal from 'scrollreveal';
+
 
 import Helmet from '../components/Helmet'
 import HeroSlider from '../components/HeroSlider'
@@ -16,7 +18,10 @@ import banner from "../assets/images/banner.png";
 
 function Home() {
 
-
+    useEffect(() => {
+        ScrollReveal().reveal('.banner', { delay: 100,duration: 1000,distance: '60px' });
+    }, []);
+    
   return (
     <Helmet title="Trang chu">
         {/* slider */}
@@ -82,7 +87,7 @@ function Home() {
         {/* Banner */}
         <Section>
           <Link to="/catalog">
-            <img src={banner} alt="" />
+            <img src={banner} alt="" className='banner' />
           </Link>
         </Section>    
         {/* end banner */}

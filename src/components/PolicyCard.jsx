@@ -1,7 +1,13 @@
-import React from "react";
+import React , { useEffect } from "react";
+import ScrollReveal from 'scrollreveal';
 import PropTypes from "prop-types";
 
 function PolicyCard(props) {
+
+    useEffect(() => {
+        ScrollReveal().reveal('.policy-card', { delay: 1, origin: 'bottom',duration: 1000,distance: '60px' });
+    }, []);
+    
     return ( 
         <div className="policy-card">
             <div className="policy-card__icon">

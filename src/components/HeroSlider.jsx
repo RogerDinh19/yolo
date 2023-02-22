@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
+import ScrollReveal from 'scrollreveal';
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
@@ -38,8 +39,12 @@ function HeroSlider(props) {
             }
         }
     }, [nextSlider,timeOut,props])
-
     // auto slideshow
+
+    useEffect(() => {
+        ScrollReveal().reveal('.hero-slider__item__info', { delay: 1, origin: 'left',duration: 1000,distance: '60px', });
+        ScrollReveal().reveal('.hero-slider__item__image', { delay: 1, origin: 'right',duration: 1000,distance: '60px' });
+      }, []);
 
 
     return (
