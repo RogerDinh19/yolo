@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import Button from './Button'
+import Alert from './Alert'
 import numberWithCommas from '../numberToString/numberWithCommas'
 import { withRouter } from 'react-router-dom'
 
@@ -8,9 +9,12 @@ import { useDispatch } from 'react-redux'
 import { addItem } from '../redux/shopping-cart/cartItemsSlide'
 import { remove } from '../redux/redux-modal/productModalSlice'
 
+
+
 function ProductView(props) {
 
     const dispatch = useDispatch()
+    
 
 
     let product = props.product
@@ -21,6 +25,7 @@ function ProductView(props) {
         colors: [],
         size: []
     }
+    const [showAlert, setShowAlert] = useState(false);
 
     const [previewImg , setPreviewImg] = useState(product.image01)
 
@@ -62,9 +67,10 @@ function ProductView(props) {
         return true
     }
 
-    // thêm vào giỏ hàng
+    // thêm vào giỏ hàng và tạo thông báo 
     const addToCart = () =>{
         if (check() ) {
+            // thêm giỏ hàng
             dispatch(addItem({
                 slug: product.slug,
                 color: color,
@@ -72,7 +78,12 @@ function ProductView(props) {
                 quantity: quantity,
                 price:product.price
             }))
-            alert("Đã thêm sản phẩm vào giỏ hàng")
+
+            // thông báo và tắt thông báo sau 3s
+            setShowAlert(true);
+            setTimeout(() => {
+            setShowAlert(false);
+            }, 3000);
         }
     }
 
@@ -93,6 +104,7 @@ function ProductView(props) {
 
   return (
     <div className="product-main">
+
         <div className="product">
             <div className="product__image">
                 <div className="product__image__list">
@@ -200,6 +212,14 @@ function ProductView(props) {
                     >
                         Mua ngay
                     </Button>
+                    
+                    {/* Thông báo  */}
+                    {showAlert && (
+                        <Alert 
+                            type="success" 
+                            message="Sản phẩm đã được thêm vào giỏ hàng" 
+                        />
+                    )}
                 </div>
             </div>
         </div>

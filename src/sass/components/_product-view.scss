@@ -1,6 +1,7 @@
 .product-main{
     .product{
         @include flex (flex-start, flex-start);
+
     
         @include mobile {
             flex-direction: column
@@ -47,7 +48,14 @@
             flex-grow: 1;
             position: sticky;
             top: $header-shrink-height;
-            padding-top: 2rem;
+            padding-top: 3.5rem;
+
+            @include mobile {
+                position: relative;
+                padding-top: 0rem;
+                width: 100%;
+                margin-bottom: 5rem;
+            }
     
             .product__info__title{
                 font-size: 2rem;
