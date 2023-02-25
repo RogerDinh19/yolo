@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import {  toast } from 'react-toastify';
 import PropTypes from 'prop-types'
 import Button from './Button'
-import Alert from './Alert'
 import numberWithCommas from '../numberToString/numberWithCommas'
 import { withRouter } from 'react-router-dom'
 
@@ -25,7 +25,6 @@ function ProductView(props) {
         colors: [],
         size: []
     }
-    const [showAlert, setShowAlert] = useState(false);
 
     const [previewImg , setPreviewImg] = useState(product.image01)
 
@@ -80,10 +79,16 @@ function ProductView(props) {
             }))
 
             // thông báo và tắt thông báo sau 3s
-            setShowAlert(true);
-            setTimeout(() => {
-            setShowAlert(false);
-            }, 3000);
+            toast.success('Đã thêm sản phẩm vào giỏ hàng', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });
         }
     }
 
@@ -214,12 +219,6 @@ function ProductView(props) {
                     </Button>
                     
                     {/* Thông báo  */}
-                    {showAlert && (
-                        <Alert 
-                            type="success" 
-                            message="Sản phẩm đã được thêm vào giỏ hàng" 
-                        />
-                    )}
                 </div>
             </div>
         </div>

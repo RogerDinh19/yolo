@@ -1,4 +1,6 @@
 import React, {useState , useEffect } from 'react'
+import {  toast } from 'react-toastify';
+
 import PropTypes from 'prop-types'
 import numberWithCommas from '../numberToString/numberWithCommas'
 
@@ -31,6 +33,16 @@ function CartItem(props) {
 
     const removeCartItem = () => {
         dispatch(removeItem(item))
+        toast.success('Đã xóa sản phẩm khỏi giỏ hàng', {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            });
     }
     
     return (

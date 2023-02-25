@@ -8,7 +8,7 @@ function Helmet(props)  {
     document.title = 'Yolo - ' + props.title;
 
     // Chuyển trang scroll to top
-    React.useEffect(() => {
+    useEffect(() => {
         window.scrollTo(0, 0);
     }, [])
     

@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { BrowserRouter, Route } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify';
 
 import Header from './Header'
 import Footer from './Footer'
@@ -21,6 +22,7 @@ function Layout() {
                     </div>
                     <Footer/>
                     <ProductViewModal/>
+                    <ToastContainer />
                 </div>
             )}/>
         </BrowserRouter>
